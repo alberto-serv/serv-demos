@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 import {
   ArrowUpRight,
   FileText,
@@ -47,17 +47,15 @@ const INDUSTRY_ICON: Record<string, LucideIcon> = {
 
 type Filter = "all" | Status
 
-function ProjectCard({ project, index }: { project: Project; index: number }) {
+function ProjectCard({ project }: { project: Project }) {
   const meta = STATUS_META[project.status]
   const Icon = INDUSTRY_ICON[project.industry] ?? Sparkles
 
   return (
     <motion.div
-      layout
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, scale: 0.97 }}
-      transition={{ duration: 0.5, delay: Math.min(index * 0.05, 0.4), ease: EASE }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.25, ease: "easeOut" }}
       className="group relative flex flex-col overflow-hidden rounded-sm border border-border bg-card transition-all duration-300 hover:border-foreground/25 hover:shadow-xl"
     >
       {/* full-card click target → storefront (sits below the case-study link) */}
@@ -218,13 +216,11 @@ export function Showcase() {
         </div>
 
         {/* grid */}
-        <motion.div layout className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          <AnimatePresence mode="popLayout">
-            {filtered.map((p, i) => (
-              <ProjectCard key={p.name} project={p} index={i} />
-            ))}
-          </AnimatePresence>
-        </motion.div>
+        <div key={filter} className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {filtered.map((p) => (
+            <ProjectCard key={p.name} project={p} />
+          ))}
+        </div>
       </div>
     </section>
   )
