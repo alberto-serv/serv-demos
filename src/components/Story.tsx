@@ -29,7 +29,7 @@ const beats = [
 
 export function Story() {
   return (
-    <section id="story" className="relative py-24 md:py-32">
+    <section id="story" className="relative pb-24 pt-10 md:pb-32 md:pt-12">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
