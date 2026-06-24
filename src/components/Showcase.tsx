@@ -126,7 +126,7 @@ function ProjectCard({ project, className = "" }: { project: Project; className?
             alt={`${project.name} storefront`}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+            className="object-cover object-top"
           />
           {/* on hover, cross-fade through the project's slideshow screenshots.
               isolate keeps the slide z-stacking from escaping over the scrim/badges */}
