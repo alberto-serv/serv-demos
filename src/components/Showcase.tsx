@@ -212,7 +212,11 @@ export function Showcase({ items = projects }: { items?: Project[] } = {}) {
 
   const filters: { key: Filter; label: string; count: number }[] = [
     { key: "all", label: "Everything", count: items.length },
-    ...STATUS_ORDER.map((s) => ({ key: s, label: STATUS_META[s].label, count: counts[s] })),
+    ...STATUS_ORDER.filter((s) => counts[s] > 0).map((s) => ({
+      key: s,
+      label: STATUS_META[s].label,
+      count: counts[s],
+    })),
   ]
 
   return (
