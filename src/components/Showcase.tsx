@@ -200,18 +200,18 @@ function ProjectCard({ project, className = "" }: { project: Project; className?
   )
 }
 
-export function Showcase() {
+export function Showcase({ items = projects }: { items?: Project[] } = {}) {
   const [filter, setFilter] = useState<Filter>("all")
 
   const counts = STATUS_ORDER.reduce(
-    (acc, s) => ({ ...acc, [s]: projects.filter((p) => p.status === s).length }),
+    (acc, s) => ({ ...acc, [s]: items.filter((p) => p.status === s).length }),
     {} as Record<Status, number>,
   )
 
-  const filtered = filter === "all" ? projects : projects.filter((p) => p.status === filter)
+  const filtered = filter === "all" ? items : items.filter((p) => p.status === filter)
 
   const filters: { key: Filter; label: string; count: number }[] = [
-    { key: "all", label: "Everything", count: projects.length },
+    { key: "all", label: "Everything", count: items.length },
     ...STATUS_ORDER.map((s) => ({ key: s, label: STATUS_META[s].label, count: counts[s] })),
   ]
 
