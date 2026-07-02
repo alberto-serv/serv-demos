@@ -265,9 +265,38 @@ export const projects: Project[] = [
     name: "Grasshopper Group",
     slug: "grasshopper",
     industry: "Field Services",
-    url: "https://hummingbird-pricing.vercel.app/portal/login",
+    url: "https://hummingbird-pricing.vercel.app/hvac-installation",
     status: "dev",
-    blurb: "A pricing portal unifying quotes across a multi-brand group.",
+    blurb: "A multi-brand co-op operating across 11 HVAC companies — Good/Better/Best proposals built in the field.",
+    cardImage: "/shots/grasshopper/builder.png",
+    detail: {
+      tagline:
+        "Good/Better/Best HVAC proposals a tech builds in the field and hands the homeowner on the spot.",
+      overview: [
+        "Grasshopper is a multi-brand co-op operating across 11 HVAC companies, so one pricing engine has to serve every brand's catalog, warranties and margins. The build tool lets a sales tech assemble a Good/Better/Best quote in four steps — pick equipment, manage add-ons, set the warranty and adjust price — with every tier total recalculating live as they work.",
+        "One click flips the same quote into a clean customer preview: three clear options side by side, each with a plain-language “choose this option for” line, an itemized “what you're getting,” and its warranty. The homeowner can open any single option for the full price-includes breakdown and a no-change-order guarantee — turning a truck-roll estimate into a decision they can make on the spot.",
+      ],
+      highlights: [
+        { label: "Vertical", value: "HVAC Installation" },
+        { label: "Model", value: "Multi-brand co-op · 11 companies" },
+        { label: "Flow", value: "Build → Preview → Compare" },
+        { label: "Outcome", value: "In-field Good/Better/Best proposals" },
+      ],
+      shots: [
+        {
+          src: "/shots/grasshopper/builder.png",
+          caption: "Build a Good/Better/Best quote in four steps — equipment, add-ons, warranty and price recalculate live.",
+        },
+        {
+          src: "/shots/grasshopper/options.png",
+          caption: "One click flips it to the customer view: three clear options side by side.",
+        },
+        {
+          src: "/shots/grasshopper/option-detail.png",
+          caption: "Any option opens to an itemized breakdown, warranty and a no-change-order guarantee.",
+        },
+      ],
+    },
   },
   {
     name: "Anago",
