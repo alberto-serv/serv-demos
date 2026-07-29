@@ -11,7 +11,7 @@ export default function Customers() {
   return (
     <main id="top" className="min-h-screen scroll-smooth">
       <Navbar />
-      <Showcase items={customerProjects} />
+      <Showcase items={customerProjects} from="customers" />
       <Footer />
     </main>
   )

@@ -1,8 +1,8 @@
-import Link from "next/link"
 import { notFound } from "next/navigation"
-import { ArrowLeft, ArrowUpRight, FileText, MapPin } from "lucide-react"
+import { ArrowUpRight, FileText, MapPin } from "lucide-react"
 import { Navbar, Footer } from "@/components/SiteChrome"
 import { ProjectGallery } from "@/components/ProjectGallery"
+import { BackToShowcase } from "@/components/BackToShowcase"
 import { projects, STATUS_META } from "@/data/projects"
 
 export function generateStaticParams() {
@@ -39,14 +39,8 @@ export default async function ProjectDetailPage({
         {/* full-bleed animated brand gradient band */}
         <div className="bg-gradient-to-r from-primary/45 via-secondary/30 to-tertiary/40 animate-gradient-xy">
           <div className="container mx-auto px-4 py-8 md:py-10">
-            {/* back link */}
-            <Link
-              href="/#showcase"
-              className="mb-6 inline-flex items-center gap-1.5 text-sm font-medium text-foreground/70 transition-colors hover:text-foreground"
-            >
-              <ArrowLeft className="size-4" />
-              Back to showcase
-            </Link>
+            {/* back link — returns to whichever showcase cut sent them here */}
+            <BackToShowcase />
             <div className="flex flex-wrap items-center gap-2.5">
               <span className="inline-flex items-center gap-1.5 rounded-sm border border-border bg-background/85 px-2.5 py-1 text-xs font-medium text-foreground backdrop-blur-md">
                 <span className={`size-1.5 rounded-full ${meta.dot}`} />

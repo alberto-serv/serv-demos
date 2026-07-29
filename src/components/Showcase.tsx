@@ -50,10 +50,20 @@ const INDUSTRY_ICON: Record<string, LucideIcon> = {
 
 type Filter = "all" | Status
 
-function ProjectCard({ project, className = "" }: { project: Project; className?: string }) {
+function ProjectCard({
+  project,
+  from,
+  className = "",
+}: {
+  project: Project
+  /** which showcase cut this card sits in, so the detail page can link back to it */
+  from?: string
+  className?: string
+}) {
   const meta = STATUS_META[project.status]
   const Icon = INDUSTRY_ICON[project.industry] ?? Sparkles
   const hasDetail = Boolean(project.detail)
+  const detailHref = `/projects/${project.slug}${from ? `?from=${from}` : ""}`
   const shots = project.detail?.shots ?? []
   const hasShots = shots.length > 1
 
@@ -104,7 +114,7 @@ function ProjectCard({ project, className = "" }: { project: Project; className?
       {/* full-card click target → in-app detail page when one exists, else the live storefront */}
       {hasDetail ? (
         <Link
-          href={`/projects/${project.slug}`}
+          href={detailHref}
           aria-label={`View the ${project.name} project`}
           className="absolute inset-0 z-10"
         />
@@ -200,7 +210,10 @@ function ProjectCard({ project, className = "" }: { project: Project; className?
   )
 }
 
-export function Showcase({ items = projects }: { items?: Project[] } = {}) {
+export function Showcase({
+  items = projects,
+  from,
+}: { items?: Project[]; from?: string } = {}) {
   const [filter, setFilter] = useState<Filter>("all")
 
   const counts = STATUS_ORDER.reduce(
@@ -285,6 +298,7 @@ export function Showcase({ items = projects }: { items?: Project[] } = {}) {
             <ProjectCard
               key={p.name}
               project={p}
+              from={from}
               className={i < 4 ? "lg:col-span-3" : "lg:col-span-2"}
             />
           ))}
