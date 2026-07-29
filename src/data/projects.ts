@@ -121,8 +121,8 @@ export const projects: Project[] = [
       tagline:
         "Quote, schedule and book a cleaning or restoration job in one flow — no phone tag, no waiting on an estimate.",
       overview: [
-        "Cleaning and restoration is high-consideration but time-sensitive, and price varies by room, condition and add-ons. Voda turns it into a self-serve booking flow: customers tap services on an interactive cutaway of the home, configure each one inline — room counts, furnished vs. vacant, and a Bronze/Silver/Gold tier — while a running total updates instantly.",
-        "From there they pick a date and appointment window, add their details, and review a transparent summary before a clean “Booking Confirmed” page. Capturing intent at its peak keeps the lead off the callback queue and hands the crew an accurate scope before they arrive — while an always-visible Emergency & Restoration line gives urgent water, fire and mold jobs an immediate path in.",
+        "Cleaning and restoration is high-consideration but time-sensitive, and price varies by room, condition and add-ons. Voda opens on its most-booked service already priced and in the cart: customers set room count, flag vacant rooms for a discount and tick upgrades like stain or pet-odor removal, watching the total move on every tap. Nothing is gated behind a form.",
+        "From there the catalog cross-sells — each service opens its own configurator, so a carpet clean picks up air ducts or upholstery before checkout. One step collects the appointment window and contact details against a running order summary, then a clean “Booking Confirmed” recap. Capturing intent at its peak keeps the lead off the callback queue and hands the crew an accurate scope before they arrive — while an always-visible Restoration line gives urgent water, fire and mold jobs an immediate path in.",
       ],
       highlights: [
         { label: "Vertical", value: "Cleaning & Restoration" },
@@ -133,19 +133,23 @@ export const projects: Project[] = [
       shots: [
         {
           src: "/shots/voda/services.png",
-          caption: "Browse the full catalog on an interactive home cutaway, with an always-on emergency line.",
+          caption:
+            "The most-booked service leads, priced and ready — rooms, vacancy discount and upgrades all live, with a 24/7 restoration line on top.",
         },
         {
           src: "/shots/voda/selected.png",
-          caption: "Configure each service — rooms, condition and service level — as a live total tallies.",
+          caption:
+            "The rest of the catalog cross-sells; each service opens its own configurator and prices itself before it joins the cart.",
         },
         {
           src: "/shots/voda/schedule.png",
-          caption: "Pick a date and window and add details, with the order summary locking the slot.",
+          caption:
+            "Date, appointment window and contact details in one step, with a running order summary holding the estimate.",
         },
         {
           src: "/shots/voda/confirmation.png",
-          caption: "Booking confirmed — appointment, services, total and a clear what's-next plan.",
+          caption:
+            "Booking confirmed — appointment, itemized services, total and a clear what's-next plan.",
         },
       ],
     },
@@ -243,6 +247,14 @@ export const projects: Project[] = [
     status: "live",
     blurb: "Routine pet-waste plans priced and signed up in under a minute.",
   },
+  {
+    name: "Anago",
+    slug: "anago",
+    industry: "Commercial Cleaning",
+    url: "https://v0-anago-cleaning.vercel.app/",
+    status: "live",
+    blurb: "Commercial janitorial bids, productized for self-serve buyers.",
+  },
 
   // ---------------- IN DEVELOPMENT ----------------
   {
@@ -298,14 +310,6 @@ export const projects: Project[] = [
       ],
     },
   },
-  {
-    name: "Anago",
-    slug: "anago",
-    industry: "Commercial Cleaning",
-    url: "https://v0-anago-cleaning.vercel.app/",
-    status: "dev",
-    blurb: "Commercial janitorial bids, productized for self-serve buyers.",
-  },
 
   // ---------------- OPERATOR TOOLS ----------------
   {
@@ -318,6 +322,15 @@ export const projects: Project[] = [
   },
 
   // ---------------- DEMOS ----------------
+  {
+    name: "Voda Booking Assistant",
+    slug: "voda-agentic",
+    industry: "Cleaning & Restoration",
+    location: "Madison, WI",
+    url: "https://voda-agentic.vercel.app/",
+    status: "demo",
+    blurb: "The whole storefront as a conversation — quote, schedule and pay by chat.",
+  },
   {
     name: "Koala Insulation",
     slug: "koala",
